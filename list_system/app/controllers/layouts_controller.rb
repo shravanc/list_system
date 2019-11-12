@@ -13,3 +13,4 @@ class LayoutsController < ApplicationController
         end
       end
 end
+
