@@ -1,0 +1,2 @@
+class ItemLayout < ApplicationRecord
+end

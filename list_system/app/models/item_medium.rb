@@ -1,0 +1,2 @@
+class ItemMedium < ApplicationRecord
+end
