@@ -1,0 +1,2 @@
+class AppList < ApplicationRecord
+end

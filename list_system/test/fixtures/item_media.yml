@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  item_id: 1
+  medium_id: 1
+  numbder: 1
+  description: MyString
+
+two:
+  item_id: 1
+  medium_id: 1
+  numbder: 1
+  description: MyString

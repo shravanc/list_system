@@ -1,0 +1,2 @@
+class ListMedium < ApplicationRecord
+end
