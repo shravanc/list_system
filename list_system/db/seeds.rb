@@ -50,31 +50,36 @@ popular.layouts << vertical_cards_layouts
 classic.layouts << gallery_one
 
 inception_media = Medium.where(title: 'inception').first_or_create do |m|
-  m.url = 'https://s4.aconvert.com/convert/p3r68-cdx67/cbonh-7r0qd.jpg'
+  #m.url = 'https://s4.aconvert.com/convert/p3r68-cdx67/cbonh-7r0qd.jpg'
+  m.url = "https://glamourfame.com/uploads/movies-tv-shows/2019/06/09/will-we-ever-see-inception-sequel-heres-why-inception-2-will-never-happen-1560094041.jpg"
   m.media_type = 'image'
 end
 inception.media << inception_media
 
 blood_diamond_media = Medium.where(title: 'blood_diamond').first_or_create do |m|
-  m.url = 'https://s4.aconvert.com/convert/p3r68-cdx67/cbp08-g0qxl.jpg'
+  #m.url = 'https://s4.aconvert.com/convert/p3r68-cdx67/cbp08-g0qxl.jpg'
+  m.url = "https://occ-0-1001-999.1.nflxso.net/dnm/api/v6/0DW6CdE4gYtYx8iy3aj8gs9WtXE/AAAABe12njpIGTJcC_fluZbTLouZWZ7W0iLg_Vd5KmOF5EwRgZHRO1GL61hhroPfFQNdhULg6qzm0QzmAit5AarspEbA4Qfv.jpg?r=fbf"
   m.media_type = 'image'
 end
 blood_diamond.media << blood_diamond_media
 
 catch_me_if_you_can_media = Medium.where(title: 'catch_me_if_you_can').first_or_create do |m|
-  m.url = 'https://s4.aconvert.com/convert/p3r68-cdx67/cbn7h-htab8.jpg'
+  #m.url = 'https://s4.aconvert.com/convert/p3r68-cdx67/cbn7h-htab8.jpg'
+  m.url = "https://images.justwatch.com/backdrop/8707269/s1440/catch-me-if-you-can"
   m.media_type = 'image'
 end
 catch_me_if_you_can.media << catch_me_if_you_can_media
 
 departed_media = Medium.where(title: 'departed').first_or_create do |m|
-  m.url = 'https://s4.aconvert.com/convert/p3r68-cdx67/cbp35-2xj1u.jpg'
+  #m.url = 'https://s4.aconvert.com/convert/p3r68-cdx67/cbp35-2xj1u.jpg'
+  m.url = "https://thelistlove.com/wp-content/uploads/2014/12/212.jpg"
   m.media_type = 'image'
 end
 departed.media << departed_media
 
 shutter_island_media = Medium.where(title: 'shutter_island').first_or_create do |m|
-  m.url = 'https://s4.aconvert.com/convert/p3r68-cdx67/cbkk2-0vmnr.jpg'
+  #m.url = 'https://s4.aconvert.com/convert/p3r68-cdx67/cbkk2-0vmnr.jpg'
+  m.url = "https://i.redd.it/0kly44f4z0e31.jpg"
   m.media_type = 'image'
 end
 shutter_island.media << shutter_island_media
