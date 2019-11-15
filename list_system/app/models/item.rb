@@ -7,7 +7,7 @@ class Item < ApplicationRecord
   has_many :media, through: :item_media
 
   has_many :app_items
-  has_many :apps, -> { disctinct }
+  has_many :apps, through: :app_items#, -> { distinct }
 
   #callbacks
   before_create :set_slug
