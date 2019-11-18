@@ -1,4 +1,7 @@
 #Creating App
+tenant = Tenant.where(title: 'test', subdomain: 'test').first_or_create
+Apartment::Tenant.create(tenant.subdomain)
+Apartment::Tenant.switch!(tenant.subdomain)
 android = App.where(title: 'Android').first_or_create do |a|
   a.auth_token =  SecureRandom.base64(15).tr('+/=lIO0', 'pqrsxyz')
 end
