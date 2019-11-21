@@ -10,4 +10,9 @@ def create
   end
 end
 
+def destroy
+  Tenant.find_by(subdomain: params[:subdomain]).destroy
+  render json: {}, status: :ok
+end
+
 end

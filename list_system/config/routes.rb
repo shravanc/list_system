@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  resources :tenants, only: [:create]
+  resources :tenants, only: [:create, :destroy]
   resources :apps
   resources :lists
   resources :items
