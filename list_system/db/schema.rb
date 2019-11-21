@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_11_13_110506) do
+ActiveRecord::Schema.define(version: 2019_11_20_235639) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -120,6 +120,13 @@ ActiveRecord::Schema.define(version: 2019_11_13_110506) do
     t.string "url", default: ""
     t.string "media_type", default: ""
     t.string "slug", default: ""
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "tenants", force: :cascade do |t|
+    t.string "title", default: ""
+    t.string "subdomain", default: ""
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
