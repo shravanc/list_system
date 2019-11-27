@@ -4,6 +4,9 @@ android = App.where(title: 'Android').first_or_create do |a|
 end
 p "Application: #{android.auth_token}"
 
+t = Tenant.create(title: 'amazon', subdomain: 'amazon')
+Apartment::Tenant.switch!('amazon')
+
 #Item
 inception           = Item.where(title: 'Inception').first_or_create           
 blood_diamond       = Item.where(title: 'Blood Diamond').first_or_create       
