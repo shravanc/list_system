@@ -63,6 +63,12 @@ class Item < ApplicationRecord
 
   private
 
+  def state_changed
+    c = Context.new
+    ps = ItemState(c)
+    ps.published_state
+  end
+
   def items_attributes
     [:id, :title, :slug, :description]
   end
