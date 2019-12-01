@@ -5,8 +5,8 @@ class Decorator < Component
     @component = component
   end
 
-  def opertion
-    @component.operation
+  def decorate
+    @component.fetch_all
   end
 
 end

@@ -30,11 +30,11 @@ class List < ApplicationRecord
 
   def show params
     list = List.find(params[:id])
-    list.as_json(only: list_attributes, include: [ media_attributes, layouts_attributes, items_attributes, sublists_attributes ] )
+    list.as_json( show_decorator.decorate )
   end
 
   def index
-    { lists: List.all.as_json(only: list_attributes, include: [ media_attributes, layouts_attributes, items_attributes, sublists_attributes ] ) }
+    { lists: List.all.as_json( index_decorator.decorate ) }
   end
 
 #POST
@@ -82,6 +82,26 @@ class List < ApplicationRecord
   end
 
   private
+
+  def index_decorator
+    ic = IndexComponent.new
+    cl = CompositeListDecorator.new(ic)
+  end
+
+  def show_decorator
+    ic = ShowComponent.new
+    sh = ConciseListDecorator.new(ic)
+  end
+
+  def associated_model_attributes
+    m = MediaAttributes.new
+    l = LayoutAttributes.new
+    i = ItemAttributes.new
+    s = SublistAttributes.new
+    return ShowFacade.new(m, l, i, s)
+  end
+
+=begin
   def list_attributes
     [:id, :title, :slug, :description]
   end
@@ -101,6 +121,6 @@ class List < ApplicationRecord
   def sublists_attributes
     {sublists: {only: list_attributes , include: [ layouts_attributes ] } }
   end
-
+=end
 
 end

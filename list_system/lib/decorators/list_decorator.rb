@@ -1,6 +1,6 @@
-class ListDecorator
+class ListDecorator < Decorator
 
-def operation
+def decorate
 
 end
 
