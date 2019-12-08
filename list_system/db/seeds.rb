@@ -1,4 +1,5 @@
 #Creating App
+#Tenant.create(subdomain: "amazon")
 android = App.where(title: 'Android').first_or_create do |a|
   a.auth_token =  SecureRandom.base64(15).tr('+/=lIO0', 'pqrsxyz')
 end
@@ -93,6 +94,7 @@ classic.items  = [catch_me_if_you_can, departed, shutter_island]
 
 
 # NEtflix content
+#Tenant.create(subdomain: "netflix")
 android = App.where(title: 'Android').first_or_create do |a|
   a.auth_token =  SecureRandom.base64(15).tr('+/=lIO0', 'pqrsxyz')
 end

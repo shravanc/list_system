@@ -1,11 +1,11 @@
 class State
 attr_accessor :context
 
-def published
+def publish
   raise NotImplementedError, "#{self.class} has not implemented method '#{__method__}'"
 end
 
-def unpublished
+def unpublish
   raise NotImplementedError, "#{self.class} has not implemented method '#{__method__}'"
 end
 

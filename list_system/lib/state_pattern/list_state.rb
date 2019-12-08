@@ -1,7 +1,11 @@
 class ListState < State
-def published_state
+
+def publish
+
 end
 
-def unpublished_state
+def unpublish
+
+end
 
 end

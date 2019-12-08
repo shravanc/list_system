@@ -11,6 +11,7 @@ class Item < ApplicationRecord
 
   #callbacks
   before_create :set_slug
+  before_save :check_item_state
 
   def show params
     item = Item.find(params[:id])
@@ -63,10 +64,11 @@ class Item < ApplicationRecord
 
   private
 
-  def state_changed
-    c = Context.new
-    ps = ItemState(c)
-    ps.published_state
+  def check_item_state
+    return if self.state == "draft"
+    c = Context.new(ItemState.new())
+    return c.published if self.state == "published"
+    return c.unpublished if self.state == "unpublished"
   end
 
   def items_attributes

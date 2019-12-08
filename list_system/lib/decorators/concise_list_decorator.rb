@@ -9,7 +9,8 @@ def associated_model_attributes
   m = MediumAttributes.new
   l = LayoutAttributes.new
   i = ItemAttributes.new
-  return ShowFacade.new(m, l, i).show_attributes
+  s = SublistAttributes.new
+  return ShowFacade.new(m, l, i, s).show_attributes
 end
 
 def list_attributes

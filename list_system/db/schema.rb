@@ -77,6 +77,7 @@ ActiveRecord::Schema.define(version: 2019_11_20_235639) do
     t.string "title", default: ""
     t.string "description", default: ""
     t.string "slug", default: ""
+    t.string "state", default: "draft"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -110,6 +111,7 @@ ActiveRecord::Schema.define(version: 2019_11_20_235639) do
     t.string "title", default: ""
     t.string "description", default: ""
     t.string "slug", default: ""
+    t.string "state", default: "draft"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
