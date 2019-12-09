@@ -6,7 +6,7 @@ class Decorator < Component
   end
 
   def decorate
-    @component.fetch_all
+    @component.decorate
   end
 
 end
