@@ -1,6 +1,5 @@
 class Context
 attr_accessor :state
-private :state
 
 def initialize state
   transition_to(state)

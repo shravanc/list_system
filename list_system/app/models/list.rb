@@ -83,9 +83,15 @@ class List < ApplicationRecord
 
   private
 
+  def get_provider
+    return "amazon"
+  end
+
   def index_decorator
     ic = IndexComponent.new
-    cl = CompositeListDecorator.new(ic)
+    provider = (get_provider.capitalize + "ListDecorator").constantize
+    return provider.new(ic)
+
   end
 
   def show_decorator
