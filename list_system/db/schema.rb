@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_11_20_235639) do
+ActiveRecord::Schema.define(version: 2020_03_11_121015) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -48,6 +48,12 @@ ActiveRecord::Schema.define(version: 2019_11_20_235639) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "genres", force: :cascade do |t|
+    t.string "title", default: ""
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "item_layouts", force: :cascade do |t|
     t.integer "item_id"
     t.integer "list_id"
@@ -80,6 +86,7 @@ ActiveRecord::Schema.define(version: 2019_11_20_235639) do
     t.string "state", default: "draft"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "genres", default: [], array: true
   end
 
   create_table "layouts", force: :cascade do |t|

@@ -8,12 +8,11 @@ p "Application: #{android.auth_token}"
 #Apartment::Tenant.switch!('amazon')
 
 #Item
-inception           = Item.where(title: 'Inception'          , genres: [1, 2, 5]).first_or_create           
-blood_diamond       = Item.where(title: 'Blood Diamond'      , genres: [1, 2]   ).first_or_create       
-catch_me_if_you_can = Item.where(title: 'Catch Me If You Can', genres: [3, 4]   ).first_or_create 
-departed            = Item.where(title: 'Departed'           , genres: [1, 3, 4]).first_or_create            
-shutter_island      = Item.where(title: 'Shutter Island'     , genres: [5]      ).first_or_create      
-revenant            = Item.where(title: 'The Revenant'       , genres: [1, 5]   ).first_or_create            
+inception           = Item.where(title: 'Inception').first_or_create           
+blood_diamond       = Item.where(title: 'Blood Diamond').first_or_create       
+catch_me_if_you_can = Item.where(title: 'Catch Me If You Can').first_or_create 
+departed            = Item.where(title: 'Departed').first_or_create            
+shutter_island      = Item.where(title: 'Shutter Island').first_or_create      
 
 android.items = [inception, blood_diamond, catch_me_if_you_can, departed, shutter_island]
 
@@ -88,22 +87,11 @@ shutter_island_media = Medium.where(title: 'shutter_island').first_or_create do 
 end
 shutter_island.media << shutter_island_media
 
-revenant_media = Medium.where(title: 'revenant').first_or_create do |m|
-  m.url = "https://www.foxmovies.com/s3/dev-temp/en-US/__59541700ab02b.jpg"
-  m.media_type = 'image'
-end
 
+featured.items = [inception, departed, catch_me_if_you_can]
+popular.items  = [blood_diamond, shutter_island, inception]
+classic.items  = [catch_me_if_you_can, departed, shutter_island]
 
-featured.items = [inception, departed, catch_me_if_you_can, revenant]
-popular.items  = [blood_diamond, shutter_island, inception, revenant]
-classic.items  = [catch_me_if_you_can, departed, shutter_island, revenant]
-
-
-Genre.where(title: 'sci-fi'   ).first_or_create
-Genre.where(title: 'drama'    ).first_or_create
-Genre.where(title: 'thriller' ).first_or_create
-Genre.where(title: 'action'   ).first_or_create
-Genre.where(title: 'adventure').first_or_create
 
 =begin
 # NEtflix content
